@@ -230,5 +230,3 @@ class pose_detector:
                 (0, 0, 255),
                 2,
             )
-
-        cv2.imshow("Posture Detection", frame)
