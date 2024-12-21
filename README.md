@@ -14,3 +14,18 @@ This program uses your webcam to periodically analyze your sitting posture, help
 - Configurable notification alerts when poor posture is detected
 - Daily/weekly reports of posture statistics
 - Privacy-focused: All processing is done locally on your machine
+
+## Installation
+
+1. Clone the repository
+2. Install the required dependencies using `pip install -r requirements.txt`
+3. Run the program using `python src/main.py`
+
+## Usage
+
+note: the formatting on this needs to be fixed, but the functionality works
+
+1. Run the program using `python src/main.py`
+2. Press `t` to toggle tracking
+3. Press `v` to toggle video
+4. Press `q` to quit
