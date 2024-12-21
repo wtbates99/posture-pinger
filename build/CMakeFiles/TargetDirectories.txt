@@ -1,13 +1,3 @@
 /home/wb/posture_check/build/CMakeFiles/PostureChecker.dir
 /home/wb/posture_check/build/CMakeFiles/edit_cache.dir
 /home/wb/posture_check/build/CMakeFiles/rebuild_cache.dir
-/home/wb/posture_check/build/CMakeFiles/list_install_components.dir
-/home/wb/posture_check/build/CMakeFiles/install.dir
-/home/wb/posture_check/build/CMakeFiles/install/local.dir
-/home/wb/posture_check/build/CMakeFiles/install/strip.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/edit_cache.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/list_install_components.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/install.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/install/local.dir
-/home/wb/posture_check/build/_deps/json-build/CMakeFiles/install/strip.dir

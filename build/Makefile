@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles /home/wb/posture_check/build//CMakeFiles/progress.marks
@@ -174,102 +129,6 @@ PostureChecker/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/build
 .PHONY : PostureChecker/fast
 
-src/PoseDetector.o: src/PoseDetector.cpp.o
-.PHONY : src/PoseDetector.o
-
-# target to build an object file
-src/PoseDetector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o
-.PHONY : src/PoseDetector.cpp.o
-
-src/PoseDetector.i: src/PoseDetector.cpp.i
-.PHONY : src/PoseDetector.i
-
-# target to preprocess a source file
-src/PoseDetector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.i
-.PHONY : src/PoseDetector.cpp.i
-
-src/PoseDetector.s: src/PoseDetector.cpp.s
-.PHONY : src/PoseDetector.s
-
-# target to generate assembly for a file
-src/PoseDetector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.s
-.PHONY : src/PoseDetector.cpp.s
-
-src/PostureChecker.o: src/PostureChecker.cpp.o
-.PHONY : src/PostureChecker.o
-
-# target to build an object file
-src/PostureChecker.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o
-.PHONY : src/PostureChecker.cpp.o
-
-src/PostureChecker.i: src/PostureChecker.cpp.i
-.PHONY : src/PostureChecker.i
-
-# target to preprocess a source file
-src/PostureChecker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.i
-.PHONY : src/PostureChecker.cpp.i
-
-src/PostureChecker.s: src/PostureChecker.cpp.s
-.PHONY : src/PostureChecker.s
-
-# target to generate assembly for a file
-src/PostureChecker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.s
-.PHONY : src/PostureChecker.cpp.s
-
-src/Settings.o: src/Settings.cpp.o
-.PHONY : src/Settings.o
-
-# target to build an object file
-src/Settings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Settings.cpp.o
-.PHONY : src/Settings.cpp.o
-
-src/Settings.i: src/Settings.cpp.i
-.PHONY : src/Settings.i
-
-# target to preprocess a source file
-src/Settings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Settings.cpp.i
-.PHONY : src/Settings.cpp.i
-
-src/Settings.s: src/Settings.cpp.s
-.PHONY : src/Settings.s
-
-# target to generate assembly for a file
-src/Settings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Settings.cpp.s
-.PHONY : src/Settings.cpp.s
-
-src/Statistics.o: src/Statistics.cpp.o
-.PHONY : src/Statistics.o
-
-# target to build an object file
-src/Statistics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o
-.PHONY : src/Statistics.cpp.o
-
-src/Statistics.i: src/Statistics.cpp.i
-.PHONY : src/Statistics.i
-
-# target to preprocess a source file
-src/Statistics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Statistics.cpp.i
-.PHONY : src/Statistics.cpp.i
-
-src/Statistics.s: src/Statistics.cpp.s
-.PHONY : src/Statistics.s
-
-# target to generate assembly for a file
-src/Statistics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/Statistics.cpp.s
-.PHONY : src/Statistics.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -301,24 +160,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... PostureChecker"
-	@echo "... src/PoseDetector.o"
-	@echo "... src/PoseDetector.i"
-	@echo "... src/PoseDetector.s"
-	@echo "... src/PostureChecker.o"
-	@echo "... src/PostureChecker.i"
-	@echo "... src/PostureChecker.s"
-	@echo "... src/Settings.o"
-	@echo "... src/Settings.i"
-	@echo "... src/Settings.s"
-	@echo "... src/Statistics.o"
-	@echo "... src/Statistics.i"
-	@echo "... src/Statistics.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

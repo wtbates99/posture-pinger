@@ -1,40 +1,38 @@
-#include "PostureChecker.hpp"
-#include <windows.h>
+#include <opencv2/opencv.hpp>
 #include <memory>
-#include <stdexcept>
+#include <iostream>
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                   LPSTR lpCmdLine, int nCmdShow) {
+int main(int argc, char* argv[]) {
     try {
-        // Ensure only one instance is running
-        HANDLE hMutex = CreateMutex(NULL, TRUE, L"PostureCheckerMutex");
-        if (GetLastError() == ERROR_ALREADY_EXISTS) {
+        // Initialize OpenCV camera
+        cv::VideoCapture camera(0);
+        if (!camera.isOpened()) {
+            std::cerr << "Error: Could not open camera" << std::endl;
             return 1;
         }
 
-        // Initialize COM for system tray
-        HRESULT hr = CoInitialize(nullptr);
-        if (FAILED(hr)) {
-            return 1;
+        // Main loop
+        cv::Mat frame;
+        while (true) {
+            camera >> frame;
+            if (frame.empty()) {
+                std::cerr << "Error: Could not read frame" << std::endl;
+                break;
+            }
+
+            // Display frame (for testing)
+            cv::imshow("Posture Checker", frame);
+
+            // Break loop on 'q' press
+            if (cv::waitKey(1) == 'q') {
+                break;
+            }
         }
 
-        // Create and run the application
-        auto app = std::make_unique<PostureChecker>();
-        if (!app->Initialize()) {
-            return 1;
-        }
-
-        int result = app->Run();
-
-        // Cleanup
-        CoUninitialize();
-        ReleaseMutex(hMutex);
-        CloseHandle(hMutex);
-
-        return result;
+        return 0;
     }
     catch (const std::exception& e) {
-        MessageBoxA(NULL, e.what(), "Error", MB_OK | MB_ICONERROR);
+        std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
 } 

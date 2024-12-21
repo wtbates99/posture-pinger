@@ -64,32 +64,15 @@ CMAKE_BINARY_DIR = /home/wb/posture_check/build
 
 # The main recursive "all" target.
 all: CMakeFiles/PostureChecker.dir/all
-all: _deps/json-build/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: _deps/json-build/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/PostureChecker.dir/clean
-clean: _deps/json-build/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory _deps/json-build
-
-# Recursive "all" directory target.
-_deps/json-build/all:
-.PHONY : _deps/json-build/all
-
-# Recursive "preinstall" directory target.
-_deps/json-build/preinstall:
-.PHONY : _deps/json-build/preinstall
-
-# Recursive "clean" directory target.
-_deps/json-build/clean:
-.PHONY : _deps/json-build/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/PostureChecker.dir
@@ -98,12 +81,12 @@ _deps/json-build/clean:
 CMakeFiles/PostureChecker.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target PostureChecker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=1,2 "Built target PostureChecker"
 .PHONY : CMakeFiles/PostureChecker.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PostureChecker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PostureChecker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 0
 .PHONY : CMakeFiles/PostureChecker.dir/rule

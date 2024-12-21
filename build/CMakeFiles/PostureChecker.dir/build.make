@@ -83,78 +83,14 @@ CMakeFiles/PostureChecker.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PostureChecker.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wb/posture_check/src/main.cpp -o CMakeFiles/PostureChecker.dir/src/main.cpp.s
 
-CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o: CMakeFiles/PostureChecker.dir/flags.make
-CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o: ../src/PostureChecker.cpp
-CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o: CMakeFiles/PostureChecker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o -MF CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o.d -o CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o -c /home/wb/posture_check/src/PostureChecker.cpp
-
-CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wb/posture_check/src/PostureChecker.cpp > CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.i
-
-CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wb/posture_check/src/PostureChecker.cpp -o CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.s
-
-CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o: CMakeFiles/PostureChecker.dir/flags.make
-CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o: ../src/PoseDetector.cpp
-CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o: CMakeFiles/PostureChecker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o -MF CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o.d -o CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o -c /home/wb/posture_check/src/PoseDetector.cpp
-
-CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wb/posture_check/src/PoseDetector.cpp > CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.i
-
-CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wb/posture_check/src/PoseDetector.cpp -o CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.s
-
-CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o: CMakeFiles/PostureChecker.dir/flags.make
-CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o: ../src/Statistics.cpp
-CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o: CMakeFiles/PostureChecker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o -MF CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o.d -o CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o -c /home/wb/posture_check/src/Statistics.cpp
-
-CMakeFiles/PostureChecker.dir/src/Statistics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PostureChecker.dir/src/Statistics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wb/posture_check/src/Statistics.cpp > CMakeFiles/PostureChecker.dir/src/Statistics.cpp.i
-
-CMakeFiles/PostureChecker.dir/src/Statistics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PostureChecker.dir/src/Statistics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wb/posture_check/src/Statistics.cpp -o CMakeFiles/PostureChecker.dir/src/Statistics.cpp.s
-
-CMakeFiles/PostureChecker.dir/src/Settings.cpp.o: CMakeFiles/PostureChecker.dir/flags.make
-CMakeFiles/PostureChecker.dir/src/Settings.cpp.o: ../src/Settings.cpp
-CMakeFiles/PostureChecker.dir/src/Settings.cpp.o: CMakeFiles/PostureChecker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PostureChecker.dir/src/Settings.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PostureChecker.dir/src/Settings.cpp.o -MF CMakeFiles/PostureChecker.dir/src/Settings.cpp.o.d -o CMakeFiles/PostureChecker.dir/src/Settings.cpp.o -c /home/wb/posture_check/src/Settings.cpp
-
-CMakeFiles/PostureChecker.dir/src/Settings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PostureChecker.dir/src/Settings.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wb/posture_check/src/Settings.cpp > CMakeFiles/PostureChecker.dir/src/Settings.cpp.i
-
-CMakeFiles/PostureChecker.dir/src/Settings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PostureChecker.dir/src/Settings.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wb/posture_check/src/Settings.cpp -o CMakeFiles/PostureChecker.dir/src/Settings.cpp.s
-
 # Object files for target PostureChecker
 PostureChecker_OBJECTS = \
-"CMakeFiles/PostureChecker.dir/src/main.cpp.o" \
-"CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o" \
-"CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o" \
-"CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o" \
-"CMakeFiles/PostureChecker.dir/src/Settings.cpp.o"
+"CMakeFiles/PostureChecker.dir/src/main.cpp.o"
 
 # External object files for target PostureChecker
 PostureChecker_EXTERNAL_OBJECTS =
 
 PostureChecker: CMakeFiles/PostureChecker.dir/src/main.cpp.o
-PostureChecker: CMakeFiles/PostureChecker.dir/src/PostureChecker.cpp.o
-PostureChecker: CMakeFiles/PostureChecker.dir/src/PoseDetector.cpp.o
-PostureChecker: CMakeFiles/PostureChecker.dir/src/Statistics.cpp.o
-PostureChecker: CMakeFiles/PostureChecker.dir/src/Settings.cpp.o
 PostureChecker: CMakeFiles/PostureChecker.dir/build.make
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
@@ -191,7 +127,6 @@ PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.5.4d
-PostureChecker: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.5.4d
@@ -212,9 +147,8 @@ PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 PostureChecker: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 PostureChecker: CMakeFiles/PostureChecker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable PostureChecker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable PostureChecker"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PostureChecker.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E copy_directory /home/wb/posture_check/assets /home/wb/posture_check/build/assets
 
 # Rule to build all files generated by this target.
 CMakeFiles/PostureChecker.dir/build: PostureChecker
