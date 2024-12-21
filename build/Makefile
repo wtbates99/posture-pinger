@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named PostureChecker
+# Target rules for targets named posture_analyzer
 
 # Build rule for target.
-PostureChecker: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PostureChecker
-.PHONY : PostureChecker
+posture_analyzer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 posture_analyzer
+.PHONY : posture_analyzer
 
 # fast build rule for target.
-PostureChecker/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/build
-.PHONY : PostureChecker/fast
+posture_analyzer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/build
+.PHONY : posture_analyzer/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +142,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,8 +150,32 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/posture_analyzer.o: src/posture_analyzer.cpp.o
+.PHONY : src/posture_analyzer.o
+
+# target to build an object file
+src/posture_analyzer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/posture_analyzer.cpp.o
+.PHONY : src/posture_analyzer.cpp.o
+
+src/posture_analyzer.i: src/posture_analyzer.cpp.i
+.PHONY : src/posture_analyzer.i
+
+# target to preprocess a source file
+src/posture_analyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/posture_analyzer.cpp.i
+.PHONY : src/posture_analyzer.cpp.i
+
+src/posture_analyzer.s: src/posture_analyzer.cpp.s
+.PHONY : src/posture_analyzer.s
+
+# target to generate assembly for a file
+src/posture_analyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/src/posture_analyzer.cpp.s
+.PHONY : src/posture_analyzer.cpp.s
 
 # Help Target
 help:
@@ -161,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... PostureChecker"
+	@echo "... posture_analyzer"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/posture_analyzer.o"
+	@echo "... src/posture_analyzer.i"
+	@echo "... src/posture_analyzer.s"
 .PHONY : help
 
 

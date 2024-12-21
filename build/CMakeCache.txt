@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=PostureChecker
+CMAKE_PROJECT_NAME:STATIC=PostureAnalyzer
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -213,13 +213,25 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 OpenCV_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/opencv4
 
 //Value Computed by CMake
-PostureChecker_BINARY_DIR:STATIC=/home/wb/posture_check/build
+PostureAnalyzer_BINARY_DIR:STATIC=/home/wb/posture_check/build
 
 //Value Computed by CMake
-PostureChecker_IS_TOP_LEVEL:STATIC=ON
+PostureAnalyzer_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-PostureChecker_SOURCE_DIR:STATIC=/home/wb/posture_check
+PostureAnalyzer_SOURCE_DIR:STATIC=/home/wb/posture_check
+
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=/home/wb/posture_check/build
+
+//Value Computed by CMake
+Project_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=/home/wb/posture_check
+
+//The directory containing a CMake configuration file for mediapipe.
+mediapipe_DIR:PATH=mediapipe_DIR-NOTFOUND
 
 
 ########################

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/wb/posture_check/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/PostureChecker.dir/all
+all: CMakeFiles/posture_analyzer.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/PostureChecker.dir/clean
+clean: CMakeFiles/posture_analyzer.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/PostureChecker.dir
+# Target rules for target CMakeFiles/posture_analyzer.dir
 
 # All Build rule for target.
-CMakeFiles/PostureChecker.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=1,2 "Built target PostureChecker"
-.PHONY : CMakeFiles/PostureChecker.dir/all
+CMakeFiles/posture_analyzer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wb/posture_check/build/CMakeFiles --progress-num=1,2,3 "Built target posture_analyzer"
+.PHONY : CMakeFiles/posture_analyzer.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/PostureChecker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PostureChecker.dir/all
+CMakeFiles/posture_analyzer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/posture_analyzer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wb/posture_check/build/CMakeFiles 0
-.PHONY : CMakeFiles/PostureChecker.dir/rule
+.PHONY : CMakeFiles/posture_analyzer.dir/rule
 
 # Convenience name for target.
-PostureChecker: CMakeFiles/PostureChecker.dir/rule
-.PHONY : PostureChecker
+posture_analyzer: CMakeFiles/posture_analyzer.dir/rule
+.PHONY : posture_analyzer
 
 # clean rule for target.
-CMakeFiles/PostureChecker.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PostureChecker.dir/build.make CMakeFiles/PostureChecker.dir/clean
-.PHONY : CMakeFiles/PostureChecker.dir/clean
+CMakeFiles/posture_analyzer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/posture_analyzer.dir/build.make CMakeFiles/posture_analyzer.dir/clean
+.PHONY : CMakeFiles/posture_analyzer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

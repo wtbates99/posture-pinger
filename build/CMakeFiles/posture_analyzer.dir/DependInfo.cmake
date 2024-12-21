@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/wb/posture_check/src/main.cpp" "CMakeFiles/PostureChecker.dir/src/main.cpp.o" "gcc" "CMakeFiles/PostureChecker.dir/src/main.cpp.o.d"
+  "/home/wb/posture_check/src/main.cpp" "CMakeFiles/posture_analyzer.dir/src/main.cpp.o" "gcc" "CMakeFiles/posture_analyzer.dir/src/main.cpp.o.d"
+  "/home/wb/posture_check/src/posture_analyzer.cpp" "CMakeFiles/posture_analyzer.dir/src/posture_analyzer.cpp.o" "gcc" "CMakeFiles/posture_analyzer.dir/src/posture_analyzer.cpp.o.d"
   )
 
 # Targets to which this target links.

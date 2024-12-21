@@ -1,38 +1,35 @@
 #include <opencv2/opencv.hpp>
-#include <memory>
-#include <iostream>
+#include "posture_analyzer.hpp"
 
-int main(int argc, char* argv[]) {
-    try {
-        // Initialize OpenCV camera
-        cv::VideoCapture camera(0);
-        if (!camera.isOpened()) {
-            std::cerr << "Error: Could not open camera" << std::endl;
-            return 1;
-        }
-
-        // Main loop
-        cv::Mat frame;
-        while (true) {
-            camera >> frame;
-            if (frame.empty()) {
-                std::cerr << "Error: Could not read frame" << std::endl;
-                break;
-            }
-
-            // Display frame (for testing)
-            cv::imshow("Posture Checker", frame);
-
-            // Break loop on 'q' press
-            if (cv::waitKey(1) == 'q') {
-                break;
-            }
-        }
-
-        return 0;
+int main() {
+    cv::VideoCapture cap(0); // Open default camera
+    if (!cap.isOpened()) {
+        std::cerr << "Error: Could not open camera." << std::endl;
+        return -1;
     }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return 1;
+
+    PostureAnalyzer analyzer;
+    if (!analyzer.initialize()) {
+        std::cerr << "Error: Could not initialize pose analyzer." << std::endl;
+        return -1;
     }
+
+    cv::Mat frame;
+    while (true) {
+        cap >> frame;
+        if (frame.empty()) break;
+
+        analyzer.processFrame(frame);
+        analyzer.drawPoseWireframe(frame);
+
+        // Display the frame
+        cv::imshow("Posture Analyzer", frame);
+
+        // Break loop on 'q' key
+        if (cv::waitKey(1) == 'q') break;
+    }
+
+    cap.release();
+    cv::destroyAllWindows();
+    return 0;
 } 
