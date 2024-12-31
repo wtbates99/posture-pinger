@@ -146,14 +146,37 @@ class PostureTrackerTray(QSystemTrayIcon):
         if self.video_window:
             self.video_window = None
             self.toggle_video_action.setText("Show Video")
-            cv2.destroyAllWindows()
-            QTimer.singleShot(100, cv2.destroyAllWindows)
+            cv2.destroyWindow("Posture Detection")
+            QTimer.singleShot(100, cv2.destroyAllWindows)  # Ensure cleanup
         else:
             cv2.namedWindow(
                 "Posture Detection", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL
             )
+            # Set up mouse callback immediately when creating new window
+            cv2.setMouseCallback("Posture Detection", self.mouse_callback)
             self.video_window = True
             self.toggle_video_action.setText("Hide Video")
+
+    def mouse_callback(self, event, x, y, flags, param):
+        """Separate method for mouse callback to avoid recreation"""
+        if event == cv2.EVENT_LBUTTONDOWN:
+            # Get current frame dimensions for button positioning
+            frame = self.frame_reader.get_latest_frame()[0]
+            if frame is None:
+                return
+
+            button_height = 30
+            button_width = 100
+            button_margin = 10
+
+            # Check if click is within button bounds
+            if (
+                frame.shape[1] - button_width - button_margin
+                <= x
+                <= frame.shape[1] - button_margin
+                and button_margin <= y <= button_margin + button_height
+            ):
+                self.toggle_video()
 
     def update_tracking(self):
         if self.tracking_enabled:
@@ -184,6 +207,7 @@ class PostureTrackerTray(QSystemTrayIcon):
 
                 self.notifier.check_and_notify(average_score)
                 if self.video_window:
+                    # Add close button to frame
                     button_height = 30
                     button_width = 100
                     button_margin = 10
@@ -210,18 +234,7 @@ class PostureTrackerTray(QSystemTrayIcon):
                     )
 
                     cv2.imshow("Posture Detection", frame)
-
-                    def mouse_callback(event, x, y, flags, param):
-                        if event == cv2.EVENT_LBUTTONDOWN:
-                            if (
-                                frame.shape[1] - button_width - button_margin
-                                <= x
-                                <= frame.shape[1] - button_margin
-                                and button_margin <= y <= button_margin + button_height
-                            ):
-                                self.toggle_video()
-
-                    cv2.setMouseCallback("Posture Detection", mouse_callback)
+                    cv2.waitKey(1)
 
     def _save_to_db(self, average_score):
         """Helper method to save pose data to database"""
