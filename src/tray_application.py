@@ -180,8 +180,22 @@ class PostureTrackerTray(QSystemTrayIcon):
 
                 self.notifier.check_and_notify(average_score)
                 if self.video_window:
-                    cv2.imshow("Posture Detection", frame)
-                    cv2.waitKey(1)
+                    try:
+                        cv2.imshow("Posture Detection", frame)
+                        # Check if window was closed by user
+                        if (
+                            cv2.getWindowProperty(
+                                "Posture Detection", cv2.WND_PROP_VISIBLE
+                            )
+                            < 1
+                        ):
+                            self.video_window = None
+                            self.toggle_video_action.setText("Show Video")
+                        cv2.waitKey(1)
+                    except cv2.error:
+                        # Handle case where window was closed
+                        self.video_window = None
+                        self.toggle_video_action.setText("Show Video")
 
     def _save_to_db(self, average_score):
         """Helper method to save pose data to database"""
