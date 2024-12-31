@@ -150,6 +150,7 @@ class PostureTrackerTray(QSystemTrayIcon):
         else:
             self.video_window = True
             self.toggle_video_action.setText("Hide Video")
+            cv2.namedWindow("Posture Detection", cv2.WINDOW_NORMAL)
 
     def update_tracking(self):
         if self.tracking_enabled:
@@ -181,18 +182,18 @@ class PostureTrackerTray(QSystemTrayIcon):
                 self.notifier.check_and_notify(average_score)
                 if self.video_window:
                     try:
-                        cv2.imshow("Posture Detection", frame)
-                        key = cv2.waitKey(1) & 0xFF
                         if (
                             cv2.getWindowProperty(
                                 "Posture Detection", cv2.WND_PROP_VISIBLE
                             )
-                            < 1
-                            or key == 27
+                            < 0
                         ):
                             self.video_window = None
                             self.toggle_video_action.setText("Show Video")
                             cv2.destroyAllWindows()
+                        else:
+                            cv2.imshow("Posture Detection", frame)
+                            cv2.waitKey(1)
                     except cv2.error:
                         self.video_window = None
                         self.toggle_video_action.setText("Show Video")
