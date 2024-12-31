@@ -184,20 +184,44 @@ class PostureTrackerTray(QSystemTrayIcon):
 
                 self.notifier.check_and_notify(average_score)
                 if self.video_window:
-                    try:
-                        if (
-                            cv2.getWindowProperty(
-                                "Posture Detection", cv2.WND_PROP_AUTOSIZE
-                            )
-                            >= 0
-                        ):
-                            cv2.imshow("Posture Detection", frame)
-                            if cv2.waitKey(1) & 0xFF == 27:  # ESC key
+                    button_height = 30
+                    button_width = 100
+                    button_margin = 10
+
+                    cv2.rectangle(
+                        frame,
+                        (frame.shape[1] - button_width - button_margin, button_margin),
+                        (frame.shape[1] - button_margin, button_margin + button_height),
+                        (200, 200, 200),
+                        -1,
+                    )
+
+                    cv2.putText(
+                        frame,
+                        "Close Video",
+                        (
+                            frame.shape[1] - button_width - button_margin + 10,
+                            button_margin + 20,
+                        ),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.5,
+                        (0, 0, 0),
+                        1,
+                    )
+
+                    cv2.imshow("Posture Detection", frame)
+
+                    def mouse_callback(event, x, y, flags, param):
+                        if event == cv2.EVENT_LBUTTONDOWN:
+                            if (
+                                frame.shape[1] - button_width - button_margin
+                                <= x
+                                <= frame.shape[1] - button_margin
+                                and button_margin <= y <= button_margin + button_height
+                            ):
                                 self.toggle_video()
-                        else:
-                            self.toggle_video()
-                    except cv2.error:
-                        self.toggle_video()
+
+                    cv2.setMouseCallback("Posture Detection", mouse_callback)
 
     def _save_to_db(self, average_score):
         """Helper method to save pose data to database"""
