@@ -146,16 +146,25 @@ class PostureTrackerTray(QSystemTrayIcon):
         if self.video_window:
             self.video_window = None
             self.toggle_video_action.setText("Show Video")
-            cv2.destroyWindow("Posture Detection")
-            QTimer.singleShot(100, cv2.destroyAllWindows)  # Ensure cleanup
+            # Remove callback before destroying window
+            try:
+                cv2.setMouseCallback("Posture Detection", lambda *args: None)
+                cv2.destroyWindow("Posture Detection")
+                QTimer.singleShot(100, cv2.destroyAllWindows)  # Ensure cleanup
+            except cv2.error:
+                pass  # Window might already be closed
         else:
-            cv2.namedWindow(
-                "Posture Detection", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL
-            )
-            # Set up mouse callback immediately when creating new window
-            cv2.setMouseCallback("Posture Detection", self.mouse_callback)
-            self.video_window = True
-            self.toggle_video_action.setText("Hide Video")
+            try:
+                cv2.namedWindow(
+                    "Posture Detection", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL
+                )
+                # Set up mouse callback immediately when creating new window
+                cv2.setMouseCallback("Posture Detection", self.mouse_callback)
+                self.video_window = True
+                self.toggle_video_action.setText("Hide Video")
+            except cv2.error:
+                self.video_window = None
+                self.toggle_video_action.setText("Show Video")
 
     def mouse_callback(self, event, x, y, flags, param):
         """Separate method for mouse callback to avoid recreation"""
