@@ -147,10 +147,13 @@ class PostureTrackerTray(QSystemTrayIcon):
             self.video_window = None
             self.toggle_video_action.setText("Show Video")
             cv2.destroyAllWindows()
+            QTimer.singleShot(100, cv2.destroyAllWindows)
         else:
+            cv2.namedWindow(
+                "Posture Detection", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL
+            )
             self.video_window = True
             self.toggle_video_action.setText("Hide Video")
-            cv2.namedWindow("Posture Detection", cv2.WINDOW_NORMAL)
 
     def update_tracking(self):
         if self.tracking_enabled:
@@ -184,20 +187,17 @@ class PostureTrackerTray(QSystemTrayIcon):
                     try:
                         if (
                             cv2.getWindowProperty(
-                                "Posture Detection", cv2.WND_PROP_VISIBLE
+                                "Posture Detection", cv2.WND_PROP_AUTOSIZE
                             )
-                            < 0
+                            >= 0
                         ):
-                            self.video_window = None
-                            self.toggle_video_action.setText("Show Video")
-                            cv2.destroyAllWindows()
-                        else:
                             cv2.imshow("Posture Detection", frame)
-                            cv2.waitKey(1)
+                            if cv2.waitKey(1) & 0xFF == 27:  # ESC key
+                                self.toggle_video()
+                        else:
+                            self.toggle_video()
                     except cv2.error:
-                        self.video_window = None
-                        self.toggle_video_action.setText("Show Video")
-                        cv2.destroyAllWindows()
+                        self.toggle_video()
 
     def _save_to_db(self, average_score):
         """Helper method to save pose data to database"""
